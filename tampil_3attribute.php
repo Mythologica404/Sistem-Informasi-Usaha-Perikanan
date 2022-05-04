@@ -17,7 +17,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <?php echo '<h4>Tabel ' . $title . '</h4>' ?>
+                    <?php echo '<h4 id="nama-table">Tabel ' . $title . '</h4>' ?>
                 </div>
 
                 <div class="card-body">
@@ -66,7 +66,7 @@
                     }
                     ?>
                     <div class="table-responsive">
-                        <table class="table table-striped" id="table-1">
+                        <table class="table table-striped" id="table-3attribute">
                             <?php
                             $sql = mysqli_query($con, "SELECT * FROM $tabel") or die(mysqli_error($con));
 
@@ -79,7 +79,7 @@
                                             </th>
                                             <th>' . $head1 . '</th>
                                             <th>' . $head2 . '</th>
-                                            <th>Action</th>
+                                            <th style="min-width: 135px; max-width: 135px">Action</th>
                                         </tr>
                                     </thead>
                                 ';

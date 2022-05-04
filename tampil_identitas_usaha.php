@@ -17,7 +17,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h4>Tabel Identitas Usaha</h4>
+                    <h4 id="nama-table">Tabel Identitas Usaha</h4>
                 </div>
 
                 <div class="card-body">
@@ -65,8 +65,9 @@
                         }
                     }
                     ?>
+
                     <div class="table-responsive">
-                        <table class="table table-striped" id="table-1">
+                        <table class="table table-striped" id="table-identitas-usaha" style="width: 100%">
                             <?php
                             $sql = mysqli_query($con, "SELECT tb_identitas_usaha.Id, tb_identitas_usaha.nama_usaha, tb_identitas_usaha.Alamat, tb_identitas_usaha.Desa, tb_kecamatan.Kecamatan, tb_kabupaten.Kabupaten, tb_provinsi.Provinsi, tb_identitas_usaha.upload_foto, tb_kategori_06.kategori_06, tb_identitas_usaha.Pemilik, tb_identitas_usaha.Jam_buka, tb_identitas_usaha.Jam_tutup, tb_identitas_usaha.Hari_buka, tb_identitas_usaha.Hari_tutup, tb_identitas_usaha.Lokasi_gps, tb_layanan.Layanan, tb_identitas_usaha.Tahun_berdiri FROM tb_identitas_usaha JOIN tb_kecamatan ON tb_kecamatan.Id = tb_identitas_usaha.Id_Kecamatan JOIN tb_kabupaten ON tb_kabupaten.Id = tb_identitas_usaha.Id_Kabupaten JOIN tb_provinsi ON tb_provinsi.Id = tb_identitas_usaha.Id_Provinsi JOIN tb_kategori_06 ON tb_kategori_06.Id = tb_identitas_usaha.Id_kategori_06 JOIN tb_layanan ON tb_layanan.Id = tb_identitas_usaha.Id_Layanan;") or die(mysqli_error($con));
 
@@ -93,7 +94,7 @@
                                             <th>Lokasi GPS</th>
                                             <th>Layanan</th>
                                             <th>Tahun Berdiri</th>
-                                            <th>Action</th>
+                                            <th style="min-width: 135px; max-width: 135px">Action</th>
                                         </tr>
                                     </thead>
                                 ';
@@ -110,14 +111,14 @@
                                             <td>' . $data['Kecamatan'] . '</td>
                                             <td>' . $data['Kabupaten'] . '</td>
                                             <td>' . $data['Provinsi'] . '</td>
-                                            <td><img src="file/img/' . $data['upload_foto'] . '" width="100px" height="100px"></td>
+                                            <td><a href="file/img/' . $data['upload_foto'] . '"><img src="file/img/' . $data['upload_foto'] . '" width="100px"></a></td>
                                             <td>' . $data['kategori_06'] . '</td>
                                             <td>' . $data['Pemilik'] . '</td>
                                             <td>' . $data['Jam_buka'] . '</td>
                                             <td>' . $data['Jam_tutup'] . '</td>
                                             <td>' . $data['Hari_buka'] . '</td>
                                             <td>' . $data['Hari_tutup'] . '</td>
-                                            <td>' . $data['Lokasi_gps'] . '</td>
+                                            <td><a href="' . $data['Lokasi_gps'] . '">' . $data['Lokasi_gps'] . '</a></td>
                                             <td>' . $data['Layanan'] . '</td>
                                             <td>' . $data['Tahun_berdiri'] . '</td>
                                             <td class="text-center" style="width:350px;"><a href="#" class="btn btn-warning">Edit</a> <a onclick="return confirm(\'Apakah anda yakin ingin menghapus data?\')" href="delete.php?Id=' . $data['Id'] . '&table=' . $tabel . '&page=' . $page . '" class="btn btn-danger">Hapus</a> </td>

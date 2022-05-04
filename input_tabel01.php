@@ -220,7 +220,7 @@
                         </div>
                         <div class="form-group">
                             <label>Tahun Berdiri</label>
-                            <input type="text" class="form-control" name="tahun_berdiri" id="tahun_berdiri" required>
+                            <input type="number" class="form-control" name="tahun_berdiri" id="tahun_berdiri" required>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>

@@ -29,8 +29,8 @@
                         $Id_kategori_03 = $_POST['kategori_03'];
                         $Id_kategori_04 = $_POST['kategori_04'];
                         $Id_kategori_05 = $_POST['kategori_05'];
-                        $Nama_Barang = $_POST['id_produk'];
-                        $Keterangan_barang = $_POST['id_trx_harga_produk'];
+                        $Nama_Barang = $_POST['nama_barang'];
+                        $Keterangan_barang = $_POST['keterangan_barang'];
 
                         $pdfExt = explode('.', $_FILES['upload_pdf']['name']);
                         $pdfExt = strtolower(end($pdfExt));

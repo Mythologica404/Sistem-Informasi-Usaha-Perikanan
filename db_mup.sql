@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 29 Apr 2022 pada 13.48
+-- Waktu pembuatan: 04 Bulan Mei 2022 pada 15.31
 -- Versi server: 5.7.33
 -- Versi PHP: 7.4.19
 
@@ -47,6 +47,16 @@ CREATE TABLE `tb_identitas_usaha` (
   `Tahun_berdiri` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_identitas_usaha`
+--
+
+INSERT INTO `tb_identitas_usaha` (`Id`, `nama_usaha`, `Alamat`, `Desa`, `Id_Kecamatan`, `Id_Kabupaten`, `Id_Provinsi`, `upload_foto`, `Id_kategori_06`, `Pemilik`, `Jam_buka`, `Jam_tutup`, `Hari_buka`, `Hari_tutup`, `Lokasi_gps`, `Id_Layanan`, `Tahun_berdiri`) VALUES
+(1, 'Agro Mina Wisata 3', 'Jalan Mentaos Timur, Kelurahan Mentaos Kecamatan Banjarbaru Utara, Kota Banjarbaru, Provinsi Kalimantan Selatan', 'Mentaos', 1, 1, 1, '62729a204dca5.png', 1, 'Kelompok Perikanan', '9:00 AM', '4:00 PM', 'Senin', 'Minggu', 'https://maps.app.goo.gl/vygLDJ9RQSkBeSfr6', 1, '2017'),
+(2, 'Amir Hamzah', 'Jalan Mentaos Timur, Kelurahan Mentaos Kecamatan Banjarbaru Utara, Kota Banjarbaru, Provinsi Kalimantan Selatan', 'Mentaos', 1, 1, 1, '62729ae7d17b4.png', 1, 'Amir Hamzah', '9:00 AM', '4:00 PM', 'Senin', 'Minggu', 'https://maps.app.goo.gl/vygLDJ9RQSkBeSfr6', 1, '2017'),
+(3, 'Pembesaran Ikan', 'Jalan Mentaos Timur, Kelurahan Mentaos Kecamatan Banjarbaru Utara, Kota Banjarbaru, Provinsi Kalimantan Selatan', 'Mentaos', 1, 1, 1, '62729b5e8629b.jpg', 1, 'Purwanto', '9:00 AM', '4:00 PM', 'Senin', 'Minggu', 'https://maps.app.goo.gl/RFxzZQBM87vDAaLf6', 1, '2015'),
+(4, 'Sentra Ikan Hias Mentaos Pokdakan Minasatuhati', 'Jalan Irigasi No 1, Kelurahan Mentaos Kecamatan Banjarbaru Utara, Kota Banjarbaru, Provinsi Kalimantan Selatan', 'Mentaos', 1, 1, 1, '62729bd279acf.jpg', 1, 'Agussyarif Hanafie', '7:00 AM', '10:30 AM', 'Senin', 'Minggu', 'https://maps.app.goo.gl/8avhbf1QAQeEeWi19', 1, '2020');
+
 -- --------------------------------------------------------
 
 --
@@ -58,6 +68,13 @@ CREATE TABLE `tb_kabupaten` (
   `Kabupaten` varchar(250) NOT NULL,
   `Keterangan` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_kabupaten`
+--
+
+INSERT INTO `tb_kabupaten` (`Id`, `Kabupaten`, `Keterangan`) VALUES
+(1, 'Banjarbaru', '');
 
 -- --------------------------------------------------------
 
@@ -131,6 +148,14 @@ CREATE TABLE `tb_kategori_06` (
   `Keterangan` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_kategori_06`
+--
+
+INSERT INTO `tb_kategori_06` (`Id`, `kategori_06`, `Keterangan`) VALUES
+(1, 'Budidaya', ''),
+(2, 'Pengolahan', '');
+
 -- --------------------------------------------------------
 
 --
@@ -167,6 +192,13 @@ CREATE TABLE `tb_kecamatan` (
   `Keterangan` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_kecamatan`
+--
+
+INSERT INTO `tb_kecamatan` (`Id`, `Kecamatan`, `Keterangan`) VALUES
+(1, 'Banjarbaru Utara', '');
+
 -- --------------------------------------------------------
 
 --
@@ -178,6 +210,13 @@ CREATE TABLE `tb_layanan` (
   `Layanan` varchar(250) NOT NULL COMMENT 'Non Layanan\r\nAntar',
   `Keterangan` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_layanan`
+--
+
+INSERT INTO `tb_layanan` (`Id`, `Layanan`, `Keterangan`) VALUES
+(1, 'Langsung', '');
 
 -- --------------------------------------------------------
 
@@ -211,6 +250,13 @@ CREATE TABLE `tb_provinsi` (
   `Provinsi` varchar(250) NOT NULL,
   `Keterangan` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_provinsi`
+--
+
+INSERT INTO `tb_provinsi` (`Id`, `Provinsi`, `Keterangan`) VALUES
+(1, 'Kalimantan Selatan', '');
 
 -- --------------------------------------------------------
 
@@ -478,13 +524,13 @@ ALTER TABLE `tb_trx_stock`
 -- AUTO_INCREMENT untuk tabel `tb_identitas_usaha`
 --
 ALTER TABLE `tb_identitas_usaha`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kabupaten`
 --
 ALTER TABLE `tb_kabupaten`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kategori_01`
@@ -520,7 +566,7 @@ ALTER TABLE `tb_kategori_05`
 -- AUTO_INCREMENT untuk tabel `tb_kategori_06`
 --
 ALTER TABLE `tb_kategori_06`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kategori_07`
@@ -538,13 +584,13 @@ ALTER TABLE `tb_kategori_usaha`
 -- AUTO_INCREMENT untuk tabel `tb_kecamatan`
 --
 ALTER TABLE `tb_kecamatan`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_layanan`
 --
 ALTER TABLE `tb_layanan`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_produk`
@@ -556,7 +602,7 @@ ALTER TABLE `tb_produk`
 -- AUTO_INCREMENT untuk tabel `tb_provinsi`
 --
 ALTER TABLE `tb_provinsi`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_trx_01`

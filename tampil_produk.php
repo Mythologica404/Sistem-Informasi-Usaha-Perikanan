@@ -17,7 +17,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h4>Tabel Produk</h4>
+                    <h4 id="nama-table">Tabel Produk</h4>
                 </div>
 
                 <div class="card-body">
@@ -66,9 +66,9 @@
                     }
                     ?>
                     <div class="table-responsive">
-                        <table class="table table-striped" id="table-1">
+                        <table class="table table-striped" id="table-produk">
                             <?php
-                            $sql = mysqli_query($con, "SELECT tb_identitas_usaha.Id, tb_identitas_usaha.nama_usaha, tb_identitas_usaha.Alamat, tb_identitas_usaha.Desa, tb_kecamatan.Kecamatan, tb_kabupaten.Kabupaten, tb_provinsi.Provinsi, tb_identitas_usaha.upload_foto, tb_kategori_06.kategori_06, tb_identitas_usaha.Pemilik, tb_identitas_usaha.Jam_buka, tb_identitas_usaha.Jam_tutup, tb_identitas_usaha.Hari_buka, tb_identitas_usaha.Hari_tutup, tb_identitas_usaha.Lokasi_gps, tb_layanan.Layanan, tb_identitas_usaha.Tahun_berdiri FROM tb_identitas_usaha JOIN tb_kecamatan ON tb_kecamatan.Id = tb_identitas_usaha.Id_Kecamatan JOIN tb_kabupaten ON tb_kabupaten.Id = tb_identitas_usaha.Id_Kabupaten JOIN tb_provinsi ON tb_provinsi.Id = tb_identitas_usaha.Id_Provinsi JOIN tb_kategori_06 ON tb_kategori_06.Id = tb_identitas_usaha.Id_kategori_06 JOIN tb_layanan ON tb_layanan.Id = tb_identitas_usaha.Id_Layanan;") or die(mysqli_error($con));
+                            $sql = mysqli_query($con, "SELECT tb_produk.Id, tb_produk.nama_produk, tb_kategori_06.kategori_06, tb_identitas_usaha.nama_usaha, tb_produk.Deskripsi_produk, tb_kategori_07.kategori_07, tb_produk.Photo_1, tb_produk.Photo_2, tb_produk.Photo_3, tb_produk.Photo_4, tb_produk.Unggah_Video, tb_produk.Video_Youtube FROM tb_produk JOIN tb_kategori_06 ON tb_kategori_06.Id = tb_produk.Id_kategori_produk JOIN tb_identitas_usaha ON tb_identitas_usaha.Id = tb_produk.Id_identitas_usaha JOIN tb_kategori_07 ON tb_kategori_07.Id = tb_produk.Id_kategori_07;") or die(mysqli_error($con));
 
                             if (mysqli_num_rows($sql) > 0) {
                                 echo '
@@ -78,7 +78,7 @@
                                                 Id
                                             </th>
                                             <th>Nama Produk</th>
-                                            <th>Kategori Produk</th>
+                                            <th>Kategori Usaha</th>
                                             <th>Nama Usaha</th>
                                             <th>Deskripsi Produk</th>
                                             <th>Ukuran</th>
@@ -88,6 +88,7 @@
                                             <th>Foto 4</th>
                                             <th>Video</th>
                                             <th>Video Youtube</th>
+                                            <th style="min-width: 135px; max-width: 135px">Action</th>
                                         </tr>
                                     </thead>
                                 ';
@@ -98,22 +99,17 @@
                                             <td style="width: 85px" ;>
                                                 ' . $data['Id'] . '
                                             </td>
-                                            <td>' . $data['nama_usaha'] . '</td>
-                                            <td>' . $data['Alamat'] . '</td>
-                                            <td>' . $data['Desa'] . '</td>
-                                            <td>' . $data['Kecamatan'] . '</td>
-                                            <td>' . $data['Kabupaten'] . '</td>
-                                            <td>' . $data['Provinsi'] . '</td>
-                                            <td><img src="file/img/' . $data['upload_foto'] . '" width="100px" height="100px"></td>
+                                            <td>' . $data['nama_produk'] . '</td>
                                             <td>' . $data['kategori_06'] . '</td>
-                                            <td>' . $data['Pemilik'] . '</td>
-                                            <td>' . $data['Jam_buka'] . '</td>
-                                            <td>' . $data['Jam_tutup'] . '</td>
-                                            <td>' . $data['Hari_buka'] . '</td>
-                                            <td>' . $data['Hari_tutup'] . '</td>
-                                            <td>' . $data['Lokasi_gps'] . '</td>
-                                            <td>' . $data['Layanan'] . '</td>
-                                            <td>' . $data['Tahun_berdiri'] . '</td>
+                                            <td>' . $data['nama_usaha'] . '</td>
+                                            <td>' . $data['Deskripsi_produk'] . '</td>
+                                            <td>' . $data['kategori_07'] . '</td>
+                                            <td><a href="file/img/' . $data['Photo_1'] . '"><img src="file/img/' . $data['Photo_1'] . '" width="100px"></a></td>
+                                            <td><a href="file/img/' . $data['Photo_2'] . '"><img src="file/img/' . $data['Photo_2'] . '" width="100px"></a></td>
+                                            <td><a href="file/img/' . $data['Photo_3'] . '"><img src="file/img/' . $data['Photo_3'] . '" width="100px"></a></td>
+                                            <td><a href="file/img/' . $data['Photo_4'] . '"><img src="file/img/' . $data['Photo_4'] . '" width="100px"></a></td>
+                                            <td><a href="file/video/' . $data['Unggah_Video'] . '">' . $data['Unggah_Video'] . '</a></td>
+                                            <td>' . $data['Video_Youtube'] . '</td>
                                             <td class="text-center" style="width:350px;"><a href="#" class="btn btn-warning">Edit</a> <a onclick="return confirm(\'Apakah anda yakin ingin menghapus data?\')" href="delete.php?Id=' . $data['Id'] . '&table=' . $tabel . '&page=' . $page . '" class="btn btn-danger">Hapus</a> </td>
                                         </tr>
                                     </tbody>

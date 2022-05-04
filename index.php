@@ -13,7 +13,8 @@
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="node_modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="node_modules/datatables.net-bs4/datatables.min.css">
+    <link rel="stylesheet" href="node_modules/datatables.net-bs4/Buttons-2.2.2/css/buttons.bootstrap4.min.css">
     <link rel="stylesheet" href="node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css">
 
     <!-- Template CSS -->
@@ -69,7 +70,7 @@
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Menu</li>
-                        <li><a class="nav-link" href="#"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+                        <li><a class="nav-link" href="?page=home"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Input Data</span></a>
                             <ul class="dropdown-menu" style="display: none;">
@@ -112,21 +113,15 @@
                                 <li><a class="nav-link" href="index.php?page=tampil_kabupaten">Kabupaten</a></li>
                                 <li><a class="nav-link" href="index.php?page=tampil_provinsi">Provinsi</a></li>
                                 <li><a class="nav-link" href="index.php?page=tampil_layanan">Layanan</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_transaksi_penjualan">Transaksi Produk</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_transaksi_non_penjualan">Transaksi Non Penjualan</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_status_transaksi_01">Status Transaksi 1</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_status_transaksi_02">Status Transaksi 2</a></li>
+                                <li><a class="nav-link" href="index.php?page=tampil_trx_01">Transaksi Produk</a></li>
+                                <li><a class="nav-link" href="index.php?page=tampil_trx_02">Transaksi Non Penjualan</a></li>
+                                <li><a class="nav-link" href="index.php?page=tampil_status_01">Status Transaksi 1</a></li>
+                                <li><a class="nav-link" href="index.php?page=tampil_status_02">Status Transaksi 2</a></li>
                                 <li><a class="nav-link" href="index.php?page=tampil_stock_produk">Stock Produk</a></li>
                                 <li><a class="nav-link" href="index.php?page=tampil_harga_produk">Harga Produk</a></li>
                             </ul>
                         </li>
                     </ul>
-
-                    <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                        <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-                            <i class="fas fa-rocket"></i> Documentation
-                        </a>
-                    </div>
                 </aside>
             </div>
 
@@ -199,6 +194,44 @@
                     $tabel = "tb_identitas_usaha";
                     $page = "tampil_identitas_usaha";
                     include 'tampil_identitas_usaha.php';
+                    break;
+                case 'tampil_produk':
+                    $tabel = "tb_produk";
+                    $page = "tampil_produk";
+                    include 'tampil_produk.php';
+                    break;
+                case 'tampil_trx_01':
+                    $tabel = "tb_trx_01";
+                    $page = "tampil_trx_01";
+                    include 'tampil_trx_01.php';
+                    break;
+                case 'tampil_trx_02':
+                    $tabel = "tb_trx_02";
+                    $page = "tampil_trx_02";
+                    include 'tampil_trx_02.php';
+                    break;
+                case 'tampil_status_01':
+                    $tabel = "tb_trx_status_01";
+                    $page = "tampil_status_01";
+                    $title = "Status Transaksi 01";
+                    include 'tampil_status.php';
+                    break;
+                case 'tampil_status_02':
+                    $tabel = "tb_trx_status_02";
+                    $page = "tampil_status_02";
+                    $title = "Status Transaksi 02";
+                    include 'tampil_status.php';
+                    break;
+                case 'tampil_stock_produk':
+                    $tabel = "tb_trx_stock";
+                    $page = "tampil_stock_produk";
+                    include 'tampil_stock.php';
+                    break;
+                case 'tampil_harga_produk':
+                    $tabel = "tb_trx_harga_produk";
+                    $page = "tampil_harga_produk";
+                    include 'tampil_harga.php';
+                    break;
                 case 'tampil_kategori_01':
                     $tabel = "tb_kategori_01";
                     $page = "tampil_kategori_01";
@@ -319,16 +352,16 @@
                     $att2 = "Keterangan";
                     include('tampil_3attribute.php');
                     break;
+                case 'tampil_chart':
+                    include('tampil_chart.php');
+                    break;
                 default:
                     include 'home.php';
             }
             ?>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
-                </div>
-                <div class="footer-right">
-                    2.3.0
+                    Copyright &copy; 2022 <div class="bullet"></div> Design By <a href="?page=home">Kelompok Perikanan</a>
                 </div>
             </footer>
         </div>
@@ -345,15 +378,19 @@
     <script src="node_modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
     <script src="node_modules/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script src="node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="node_modules/datatables.net-bs4/datatables.min.js"></script>
     <script src="node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
+    <script src="node_modules/datatables.net-bs4/Buttons-2.2.2/js/buttons.bootstrap4.min.js"></script>
+    <script src="node_modules/datatables.net-bs4/Buttons-2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="node_modules/datatables.net-bs4/Buttons-2.2.2/js/buttons.print.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
 
     <!-- Template JS File -->
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
-    <script src="assets/js/page/modules-datatables.js"></script>
 </body>
 
 </html>
