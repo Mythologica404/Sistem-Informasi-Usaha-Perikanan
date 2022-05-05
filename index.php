@@ -121,6 +121,7 @@
                                 <li><a class="nav-link" href="index.php?page=tampil_harga_produk">Harga Produk</a></li>
                             </ul>
                         </li>
+                        <li><a class="nav-link" href="?page=tampil_chart"><i class="fas fa-th large"></i> <span>Tampilkan Grafik</span></a></li>
                     </ul>
                 </aside>
             </div>
@@ -383,14 +384,15 @@
     <script src="node_modules/datatables.net-bs4/Buttons-2.2.2/js/buttons.bootstrap4.min.js"></script>
     <script src="node_modules/datatables.net-bs4/Buttons-2.2.2/js/dataTables.buttons.min.js"></script>
     <script src="node_modules/datatables.net-bs4/Buttons-2.2.2/js/buttons.print.min.js"></script>
-    <script src="node_modules/chart.js/dist/Chart.bundle.min.js"></script>
     <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.bundle.min.js"></script>
 
     <!-- Template JS File -->
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
+    <script></script>
 </body>
 
 </html>

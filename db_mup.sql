@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 04 Bulan Mei 2022 pada 15.31
+-- Waktu pembuatan: 05 Bulan Mei 2022 pada 01.05
 -- Versi server: 5.7.33
 -- Versi PHP: 7.4.19
 
@@ -55,7 +55,8 @@ INSERT INTO `tb_identitas_usaha` (`Id`, `nama_usaha`, `Alamat`, `Desa`, `Id_Keca
 (1, 'Agro Mina Wisata 3', 'Jalan Mentaos Timur, Kelurahan Mentaos Kecamatan Banjarbaru Utara, Kota Banjarbaru, Provinsi Kalimantan Selatan', 'Mentaos', 1, 1, 1, '62729a204dca5.png', 1, 'Kelompok Perikanan', '9:00 AM', '4:00 PM', 'Senin', 'Minggu', 'https://maps.app.goo.gl/vygLDJ9RQSkBeSfr6', 1, '2017'),
 (2, 'Amir Hamzah', 'Jalan Mentaos Timur, Kelurahan Mentaos Kecamatan Banjarbaru Utara, Kota Banjarbaru, Provinsi Kalimantan Selatan', 'Mentaos', 1, 1, 1, '62729ae7d17b4.png', 1, 'Amir Hamzah', '9:00 AM', '4:00 PM', 'Senin', 'Minggu', 'https://maps.app.goo.gl/vygLDJ9RQSkBeSfr6', 1, '2017'),
 (3, 'Pembesaran Ikan', 'Jalan Mentaos Timur, Kelurahan Mentaos Kecamatan Banjarbaru Utara, Kota Banjarbaru, Provinsi Kalimantan Selatan', 'Mentaos', 1, 1, 1, '62729b5e8629b.jpg', 1, 'Purwanto', '9:00 AM', '4:00 PM', 'Senin', 'Minggu', 'https://maps.app.goo.gl/RFxzZQBM87vDAaLf6', 1, '2015'),
-(4, 'Sentra Ikan Hias Mentaos Pokdakan Minasatuhati', 'Jalan Irigasi No 1, Kelurahan Mentaos Kecamatan Banjarbaru Utara, Kota Banjarbaru, Provinsi Kalimantan Selatan', 'Mentaos', 1, 1, 1, '62729bd279acf.jpg', 1, 'Agussyarif Hanafie', '7:00 AM', '10:30 AM', 'Senin', 'Minggu', 'https://maps.app.goo.gl/8avhbf1QAQeEeWi19', 1, '2020');
+(4, 'Sentra Ikan Hias Mentaos Pokdakan Minasatuhati', 'Jalan Irigasi No 1, Kelurahan Mentaos Kecamatan Banjarbaru Utara, Kota Banjarbaru, Provinsi Kalimantan Selatan', 'Mentaos', 1, 1, 1, '62729bd279acf.jpg', 1, 'Agussyarif Hanafie', '7:00 AM', '10:30 AM', 'Senin', 'Minggu', 'https://maps.app.goo.gl/8avhbf1QAQeEeWi19', 1, '2020'),
+(5, 'Sentra Ikan Hias Mentaos Pokdakan Minasatuhati', 'Jalan Irigasi No 1, Kelurahan Mentaos Kecamatan Banjarbaru Utara, Kota Banjarbaru, Provinsi Kalimantan Selatan', 'Mentaos', 1, 1, 1, '6273220e4543c.jpg', 2, 'Nuryono', '8:00 AM', '5:00 PM', 'Senin', 'Minggu', 'https://maps.app.goo.gl/8avhbf1QAQeEeWi19', 1, '2005');
 
 -- --------------------------------------------------------
 
@@ -524,7 +525,7 @@ ALTER TABLE `tb_trx_stock`
 -- AUTO_INCREMENT untuk tabel `tb_identitas_usaha`
 --
 ALTER TABLE `tb_identitas_usaha`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kabupaten`
