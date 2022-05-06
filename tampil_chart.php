@@ -1,12 +1,16 @@
 <?php include_once("config.php"); ?>
 
+<?php
+clearstatcache()
+?>
+
 <div class="main-content">
     <section class="section">
         <div class="section-header">
             <h1 id="nama-table">Grafis</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Lihat Data</a></div>
-                <div class="breadcrumb-item"><a href="#">Grafis</a></div>
+                <div class="breadcrumb-item">Grafis</div>
             </div>
         </div>
 
@@ -24,6 +28,53 @@
                         </div>
                         <div class="card-body">
                             <canvas id="tokoByKategori"></canvas>
+                            <br>
+                            <div class="table-responsive">
+                                <table class="table table-striped" style="width: 100%">
+                                    <?php
+                                    $sql = mysqli_query($con, "SELECT tb_identitas_usaha.nama_usaha, tb_kategori_06.kategori_06 FROM tb_identitas_usaha JOIN tb_kategori_06 ON tb_kategori_06.Id = tb_identitas_usaha.Id_kategori_06;") or die(mysqli_error($con));
+
+                                    if (mysqli_num_rows($sql) > 0) {
+                                        echo '
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                No
+                                            </th>
+                                            <th>Nama Usaha</th>
+                                            <th>Kategori</th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                ';
+                                        $no = 1;
+                                        while ($data = mysqli_fetch_assoc($sql)) {
+                                            echo '
+                                        <tr>
+                                            <td style="width: 85px" ;>
+                                                ' . $no . '
+                                            </td>
+                                            <td>' . $data['nama_usaha'] . '</td>
+                                            <td>' . $data['kategori_06'] . '</td>
+                                        </tr>
+                                        ';
+                                            $no++;
+                                        }
+                                        echo '</tbody>';
+                                    } else {
+                                        echo '
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">Tidak ada data di database!</td>
+                                    </tr>
+                                </tbody>
+                                ';
+                                    }
+
+                                    ?>
+
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -34,6 +85,53 @@
                         </div>
                         <div class="card-body">
                             <canvas id="tokoByKecamatan"></canvas>
+                            <br>
+                            <div class="table-responsive">
+                                <table class="table table-striped" style="width: 100%">
+                                    <?php
+                                    $sql = mysqli_query($con, "SELECT tb_identitas_usaha.nama_usaha, tb_kecamatan.Kecamatan FROM tb_identitas_usaha JOIN tb_kecamatan ON tb_kecamatan.Id = tb_identitas_usaha.Id_Kecamatan;") or die(mysqli_error($con));
+
+                                    if (mysqli_num_rows($sql) > 0) {
+                                        echo '
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                No
+                                            </th>
+                                            <th>Nama Usaha</th>
+                                            <th>Kecamatan</th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                ';
+                                        $no = 1;
+                                        while ($data = mysqli_fetch_assoc($sql)) {
+                                            echo '
+                                        <tr>
+                                            <td style="width: 85px" ;>
+                                                ' . $no . '
+                                            </td>
+                                            <td>' . $data['nama_usaha'] . '</td>
+                                            <td>' . $data['Kecamatan'] . '</td>
+                                        </tr>
+                                        ';
+                                            $no++;
+                                        }
+                                        echo '</tbody>';
+                                    } else {
+                                        echo '
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">Tidak ada data di database!</td>
+                                    </tr>
+                                </tbody>
+                                ';
+                                    }
+
+                                    ?>
+
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,6 +144,53 @@
                         </div>
                         <div class="card-body">
                             <canvas id="tokoByKabupaten"></canvas>
+                            <br>
+                            <div class="table-responsive">
+                                <table class="table table-striped" style="width: 100%">
+                                    <?php
+                                    $sql = mysqli_query($con, "SELECT tb_identitas_usaha.nama_usaha, tb_kabupaten.Kabupaten FROM tb_identitas_usaha JOIN tb_kabupaten ON tb_kabupaten.Id = tb_identitas_usaha.Id_Kabupaten;") or die(mysqli_error($con));
+
+                                    if (mysqli_num_rows($sql) > 0) {
+                                        echo '
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                No
+                                            </th>
+                                            <th>Nama Usaha</th>
+                                            <th>Kabupaten</th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                ';
+                                        $no = 1;
+                                        while ($data = mysqli_fetch_assoc($sql)) {
+                                            echo '
+                                        <tr>
+                                            <td style="width: 85px" ;>
+                                                ' . $no . '
+                                            </td>
+                                            <td>' . $data['nama_usaha'] . '</td>
+                                            <td>' . $data['Kabupaten'] . '</td>
+                                        </tr>
+                                        ';
+                                            $no++;
+                                        }
+                                        echo '</tbody>';
+                                    } else {
+                                        echo '
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">Tidak ada data di database!</td>
+                                    </tr>
+                                </tbody>
+                                ';
+                                    }
+
+                                    ?>
+
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,6 +201,53 @@
                         </div>
                         <div class="card-body">
                             <canvas id="produkByToko"></canvas>
+                            <br>
+                            <div class="table-responsive">
+                                <table class="table table-striped" style="width: 100%">
+                                    <?php
+                                    $sql = mysqli_query($con, "SELECT tb_produk.nama_produk, tb_identitas_usaha.nama_usaha FROM tb_produk JOIN tb_identitas_usaha ON tb_identitas_usaha.Id = tb_produk.Id_identitas_usaha;") or die(mysqli_error($con));
+
+                                    if (mysqli_num_rows($sql) > 0) {
+                                        echo '
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                No
+                                            </th>
+                                            <th>Nama Produk</th>
+                                            <th>Toko</th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                ';
+                                        $no = 1;
+                                        while ($data = mysqli_fetch_assoc($sql)) {
+                                            echo '
+                                        <tr>
+                                            <td style="width: 85px" ;>
+                                                ' . $no . '
+                                            </td>
+                                            <td>' . $data['nama_produk'] . '</td>
+                                            <td>' . $data['nama_usaha'] . '</td>
+                                        </tr>
+                                        ';
+                                            $no++;
+                                        }
+                                        echo '</tbody>';
+                                    } else {
+                                        echo '
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">Tidak ada data di database!</td>
+                                    </tr>
+                                </tbody>
+                                ';
+                                    }
+
+                                    ?>
+
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,6 +260,53 @@
                         </div>
                         <div class="card-body">
                             <canvas id="produkByKategori"></canvas>
+                            <br>
+                            <div class="table-responsive">
+                                <table class="table table-striped" style="width: 100%">
+                                    <?php
+                                    $sql = mysqli_query($con, "SELECT tb_produk.nama_produk, tb_kategori_06.kategori_06 FROM tb_produk JOIN tb_kategori_06 ON tb_kategori_06.Id = tb_produk.Id_kategori_produk;") or die(mysqli_error($con));
+
+                                    if (mysqli_num_rows($sql) > 0) {
+                                        echo '
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                No
+                                            </th>
+                                            <th>Nama Produk</th>
+                                            <th>Kategori</th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                ';
+                                        $no = 1;
+                                        while ($data = mysqli_fetch_assoc($sql)) {
+                                            echo '
+                                        <tr>
+                                            <td style="width: 85px" ;>
+                                                ' . $no . '
+                                            </td>
+                                            <td>' . $data['nama_produk'] . '</td>
+                                            <td>' . $data['kategori_06'] . '</td>
+                                        </tr>
+                                        ';
+                                            $no++;
+                                        }
+                                        echo '</tbody>';
+                                    } else {
+                                        echo '
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">Tidak ada data di database!</td>
+                                    </tr>
+                                </tbody>
+                                ';
+                                    }
+
+                                    ?>
+
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,18 +332,14 @@
     var myChart = new Chart(ctx, {
         type: "bar",
         data: {
-            labels: [
-                <?php
-                echo json_encode($kategori);
-                ?>
-            ],
+            labels: <?php
+                    echo json_encode($kategori);
+                    ?>,
             datasets: [{
                 label: "Statistics",
-                data: [
-                    <?php
-                    echo json_encode($count);
-                    ?>
-                ],
+                data: <?php
+                        echo json_encode($count);
+                        ?>,
                 borderWidth: 2,
                 backgroundColor: "#6777ef",
                 borderColor: "#6777ef",
@@ -130,7 +365,7 @@
                 }, ],
                 xAxes: [{
                     ticks: {
-                        display: false,
+                        display: true,
                     },
                     gridLines: {
                         display: false,
@@ -155,18 +390,14 @@
     var myChart = new Chart(ctx, {
         type: "bar",
         data: {
-            labels: [
-                <?php
-                echo json_encode($kecamatan);
-                ?>
-            ],
+            labels: <?php
+                    echo json_encode($kecamatan);
+                    ?>,
             datasets: [{
                 label: "Statistics",
-                data: [
-                    <?php
-                    echo json_encode($count2);
-                    ?>
-                ],
+                data: <?php
+                        echo json_encode($count2);
+                        ?>,
                 borderWidth: 2,
                 backgroundColor: "#6777ef",
                 borderColor: "#6777ef",
@@ -192,7 +423,7 @@
                 }, ],
                 xAxes: [{
                     ticks: {
-                        display: false,
+                        display: true,
                     },
                     gridLines: {
                         display: false,
@@ -217,18 +448,14 @@
     var myChart = new Chart(ctx, {
         type: "bar",
         data: {
-            labels: [
-                <?php
-                echo json_encode($kabupaten);
-                ?>
-            ],
+            labels: <?php
+                    echo json_encode($kabupaten);
+                    ?>,
             datasets: [{
                 label: "Statistics",
-                data: [
-                    <?php
-                    echo json_encode($count3);
-                    ?>
-                ],
+                data: <?php
+                        echo json_encode($count3);
+                        ?>,
                 borderWidth: 2,
                 backgroundColor: "#6777ef",
                 borderColor: "#6777ef",
@@ -254,7 +481,7 @@
                 }, ],
                 xAxes: [{
                     ticks: {
-                        display: false,
+                        display: true,
                     },
                     gridLines: {
                         display: false,
@@ -279,18 +506,14 @@
     var myChart = new Chart(ctx, {
         type: "bar",
         data: {
-            labels: [
-                <?php
-                echo json_encode($toko);
-                ?>
-            ],
+            labels: <?php
+                    echo json_encode($toko);
+                    ?>,
             datasets: [{
                 label: "Statistics",
-                data: [
-                    <?php
-                    echo json_encode($count4);
-                    ?>
-                ],
+                data: <?php
+                        echo json_encode($count4);
+                        ?>,
                 borderWidth: 2,
                 backgroundColor: "#6777ef",
                 borderColor: "#6777ef",
@@ -316,7 +539,7 @@
                 }, ],
                 xAxes: [{
                     ticks: {
-                        display: false,
+                        display: true,
                     },
                     gridLines: {
                         display: false,
@@ -341,18 +564,14 @@
     var myChart = new Chart(ctx, {
         type: "bar",
         data: {
-            labels: [
-                <?php
-                echo json_encode($kategori02);
-                ?>
-            ],
+            labels: <?php
+                    echo json_encode($kategori02);
+                    ?>,
             datasets: [{
                 label: "Statistics",
-                data: [
-                    <?php
-                    echo json_encode($count5);
-                    ?>
-                ],
+                data: <?php
+                        echo json_encode($count5);
+                        ?>,
                 borderWidth: 2,
                 backgroundColor: "#6777ef",
                 borderColor: "#6777ef",
@@ -378,7 +597,7 @@
                 }, ],
                 xAxes: [{
                     ticks: {
-                        display: false,
+                        display: true,
                     },
                     gridLines: {
                         display: false,

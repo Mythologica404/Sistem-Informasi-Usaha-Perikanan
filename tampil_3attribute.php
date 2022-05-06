@@ -1,23 +1,30 @@
 <?php include_once("config.php"); ?>
 
+<?php
+clearstatcache()
+?>
+
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <?php echo '<h1>Lihat Data ' . $title . '</h1>' ?>
+            <h1>Lihat Data <?= $title ?></h1>
+            <div class="section-header-button">
+                <a href="?page=<?= $add ?>" class=" btn btn-primary">Tambah Data</a>
+            </div>
 
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Lihat Data</a></div>
-                <?php echo '<div class="breadcrumb-item">' . $title . '</div>' ?>
+                <div class="breadcrumb-item"><?= $title ?></div>
             </div>
         </div>
 
         <div class="section-body">
-            <?php echo '<h2 class="section-title">' . $title . '</h2>' ?>
-            <?php echo '<p class="section-lead">Berikut adalah tabel ' . $title . '.</p>' ?>
+            <h2 class="section-title"><?= $title ?></h2>
+            <p class="section-lead">Berikut adalah tabel <?= $title ?>.</p>
 
             <div class="card">
                 <div class="card-header">
-                    <?php echo '<h4 id="nama-table">Tabel ' . $title . '</h4>' ?>
+                    <h4 id="nama-table">Tabel <?= $title ?></h4>
                 </div>
 
                 <div class="card-body">
@@ -79,13 +86,13 @@
                                             </th>
                                             <th>' . $head1 . '</th>
                                             <th>' . $head2 . '</th>
-                                            <th style="min-width: 135px; max-width: 135px">Action</th>
+                                            <th style="min-width: 135px; max-width: 135px">Aksi</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
                                 ';
                                 while ($data = mysqli_fetch_assoc($sql)) {
                                     echo '
-                                    <tbody>
                                         <tr>
                                             <td style="width: 5%" ;>
                                                 ' . $data['Id'] . '
@@ -94,11 +101,11 @@
                                             <td style="width: 40%">
                                             ' . $data[$att2] . '
                                             </td>
-                                            <td class="text-center" style="width:350px;"><a href="#" class="btn btn-warning">Edit</a> <a onclick="return confirm(\'Apakah anda yakin ingin menghapus data?\')" href="delete.php?Id=' . $data['Id'] . '&table=' . $tabel . '&page=' . $page . '" class="btn btn-danger">Hapus</a> </td>
+                                            <td class="text-center" style="width:350px;"><a href="?page=' . $add . '&Id=' . $data['Id'] . '" class="btn btn-warning">Edit</a> <a onclick="return confirm(\'Apakah anda yakin ingin menghapus data?\')" href="delete.php?Id=' . $data['Id'] . '&table=' . $tabel . '&page=' . $page . '" class="btn btn-danger">Hapus</a> </td>
                                         </tr>
-                                    </tbody>
-                                    ';
+                                        ';
                                 }
+                                echo '</tbody>';
                             } else {
                                 echo '
                                 <tbody>

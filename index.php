@@ -34,203 +34,261 @@
                     </ul>
 
                 </form>
-                <ul class="navbar-nav navbar-right">
-
-
-                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, Pengusaha Ikan</div>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <div class="dropdown-title">Logged in 5 min ago</div>
-                            <a href="features-profile.html" class="dropdown-item has-icon">
-                                <i class="far fa-user"></i> Profile
-                            </a>
-                            <a href="features-activities.html" class="dropdown-item has-icon">
-                                <i class="fas fa-bolt"></i> Activities
-                            </a>
-                            <a href="features-settings.html" class="dropdown-item has-icon">
-                                <i class="fas fa-cog"></i> Settings
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item has-icon text-danger">
-                                <i class="fas fa-sign-out-alt"></i> Logout
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+                <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg nav-link-user">
+                        <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+                        <div class="d-sm-none d-lg-inline-block">Hi, Admin Perikanan</div>
+                    </a>
             </nav>
-            <div class="main-sidebar">
-                <aside id="sidebar-wrapper">
-                    <div class="sidebar-brand">
-                        <a href="index.html">Sistem Informasi</a>
-                    </div>
-                    <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">SI</a>
-                    </div>
-                    <ul class="sidebar-menu">
-                        <li class="menu-header">Menu</li>
-                        <li><a class="nav-link" href="?page=home"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Input Data</span></a>
-                            <ul class="dropdown-menu" style="display: none;">
-                                <li><a class="nav-link" href="index.php?page=identitas_usaha">Identitas Usaha</a></li>
-                                <li><a class="nav-link" href="index.php?page=produk">Produk</a></li>
-                                <li><a class="nav-link" href="index.php?page=kategori_01">Jenis Transaksi</a></li>
-                                <li><a class="nav-link" href="index.php?page=kategori_02">Pembayaran Transaksi</a></li>
-                                <li><a class="nav-link" href="index.php?page=kategori_03">Jenis Biaya</a></li>
-                                <li><a class="nav-link" href="index.php?page=kategori_04">Klasifikasi Transaksi</a></li>
-                                <li><a class="nav-link" href="index.php?page=kategori_05">Status Transaksi</a></li>
-                                <li><a class="nav-link" href="index.php?page=kategori_06">Kategori Usaha Perikanan</a></li>
-                                <li><a class="nav-link" href="index.php?page=kategori_07">Kategori Ukuran</a></li>
-                                <li><a class="nav-link" href="index.php?page=kategori_usaha">Kategori Usaha</a></li>
-                                <li><a class="nav-link" href="index.php?page=kecamatan">Kecamatan</a></li>
-                                <li><a class="nav-link" href="index.php?page=kabupaten">Kabupaten</a></li>
-                                <li><a class="nav-link" href="index.php?page=provinsi">Provinsi</a></li>
-                                <li><a class="nav-link" href="index.php?page=layanan">Layanan</a></li>
-                                <li><a class="nav-link" href="index.php?page=transaksi_penjualan">Transaksi Produk</a></li>
-                                <li><a class="nav-link" href="index.php?page=transaksi_non_penjualan">Transaksi Non Penjualan</a></li>
-                                <li><a class="nav-link" href="index.php?page=status_transaksi_01">Status Transaksi 1</a></li>
-                                <li><a class="nav-link" href="index.php?page=status_transaksi_02">Status Transaksi 2</a></li>
-                                <li><a class="nav-link" href="index.php?page=stock_produk">Stock Produk</a></li>
-                                <li><a class="nav-link" href="index.php?page=harga_produk">Harga Produk</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Lihat Data</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="index.php?page=tampil_identitas_usaha">Identitas Usaha</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_produk">Produk</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_kategori_01">Jenis Transaksi</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_kategori_02">Pembayaran Transaksi</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_kategori_03">Jenis Biaya</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_kategori_04">Klasifikasi Transaksi</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_kategori_05">Status Transaksi</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_kategori_06">Kategori Usaha Perikanan</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_kategori_07">Kategori Ukuran</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_kategori_usaha">Kategori Usaha</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_kecamatan">Kecamatan</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_kabupaten">Kabupaten</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_provinsi">Provinsi</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_layanan">Layanan</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_trx_01">Transaksi Produk</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_trx_02">Transaksi Non Penjualan</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_status_01">Status Transaksi 1</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_status_02">Status Transaksi 2</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_stock_produk">Stock Produk</a></li>
-                                <li><a class="nav-link" href="index.php?page=tampil_harga_produk">Harga Produk</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="nav-link" href="?page=tampil_chart"><i class="fas fa-th large"></i> <span>Tampilkan Grafik</span></a></li>
-                    </ul>
-                </aside>
-            </div>
+            <?= include 'sidebar.php' ?>
 
             <?php
             $queries = array();
             parse_str($_SERVER['QUERY_STRING'], $queries);
             error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+
+            $edit1 = "";
+            $edit2 = "";
+            $edit3 = "";
+            $edit4 = "";
+            $edit5 = "";
+            $edit6 = "";
+            $edit7 = "";
+            $edit8 = "";
+            $edit9 = "";
+            $edit10 = "";
+            $edit11 = "";
+            $edit12 = "";
+            $edit13 = "";
+            $edit14 = "";
+            $edit15 = "";
+            $edit16 = "";
             switch ($queries['page']) {
                 case 'identitas_usaha':
-                    include 'input_tabel01.php';
+                    include 'input_identitas_usaha.php';
                     break;
                 case 'produk':
-                    include 'input_tabel02.php';
+                    include 'input_produk.php';
                     break;
                 case 'kategori_01':
-                    include 'input_tabel03.php';
+                    $tabel = "tb_kategori_01";
+                    $page = "kategori_01";
+                    $title = "Jenis Transaksi";
+                    $head1 = "Kategori";
+                    $head2 = "Keterangan";
+                    $att1 = "kategori_01";
+                    $att2 = "Keterangan";
+                    include 'input_3attribute.php';
                     break;
                 case 'kategori_02':
-                    include 'input_tabel04.php';
+                    $tabel = "tb_kategori_02";
+                    $page = "kategori_02";
+                    $title = "Pembayaran Transaksi";
+                    $head1 = "Kategori";
+                    $head2 = "Keterangan";
+                    $att1 = "kategori_02";
+                    $att2 = "Keterangan";
+                    $edit1 = "";
+                    $edit2 = "";
+                    include 'input_3attribute.php';
                     break;
                 case 'kategori_03':
-                    include 'input_tabel05.php';
+                    $tabel = "tb_kategori_03";
+                    $page = "kategori_03";
+                    $title = "Jenis Biaya";
+                    $head1 = "Kategori";
+                    $head2 = "Keterangan";
+                    $att1 = "kategori_03";
+                    $att2 = "Keterangan";
+                    include 'input_3attribute.php';
                     break;
                 case 'kategori_04':
-                    include 'input_tabel06.php';
+                    $tabel = "tb_kategori_04";
+                    $page = "kategori_04";
+                    $title = "Klasifikasi Transaksi";
+                    $head1 = "Kategori";
+                    $head2 = "Keterangan";
+                    $att1 = "kategori_04";
+                    $att2 = "Keterangan";
+                    include 'input_3attribute.php';
                     break;
                 case 'kategori_05':
-                    include 'input_tabel07.php';
+                    $tabel = "tb_kategori_05";
+                    $page = "kategori_05";
+                    $title = "Status Transaksi";
+                    $head1 = "Kategori";
+                    $head2 = "Keterangan";
+                    $att1 = "kategori_05";
+                    $att2 = "Keterangan";
+                    include 'input_3attribute.php';
                     break;
                 case 'kategori_06':
-                    include 'input_tabel08.php';
+                    $tabel = "tb_kategori_06";
+                    $page = "kategori_06";
+                    $title = "Kategori Usaha Perikanan";
+                    $head1 = "Kategori";
+                    $head2 = "Keterangan";
+                    $att1 = "kategori_06";
+                    $att2 = "Keterangan";
+                    include 'input_3attribute.php';
                     break;
                 case 'kategori_07':
-                    include 'input_tabel09.php';
+                    $tabel = "tb_kategori_07";
+                    $page = "kategori_07";
+                    $title = "Kategori Ukuran";
+                    $head1 = "Kategori";
+                    $head2 = "Keterangan";
+                    $att1 = "kategori_07";
+                    $att2 = "Keterangan";
+                    include 'input_3attribute.php';
                     break;
                 case 'kategori_usaha':
-                    include 'input_tabel10.php';
+                    $tabel = "tb_kategori_usaha";
+                    $page = "kategori_usaha";
+                    $title = "Kategori Usaha";
+                    $head1 = "Kategori Toko";
+                    $head2 = "Deskripsi Toko";
+                    $att1 = "kategori_toko";
+                    $att2 = "deskripsi_toko";
+                    include 'input_3attribute.php';
                     break;
                 case 'kecamatan':
-                    include 'input_tabel11.php';
+                    $tabel = "tb_kecamatan";
+                    $page = "kecamatan";
+                    $title = "Kecamatan";
+                    $head1 = "Kecamatan";
+                    $head2 = "Keterangan";
+                    $att1 = "Kecamatan";
+                    $att2 = "Keterangan";
+                    include 'input_3attribute.php';
                     break;
                 case 'kabupaten':
-                    include 'input_tabel12.php';
+                    $tabel = "tb_kabupaten";
+                    $page = "kabupaten";
+                    $title = "Kabupaten";
+                    $head1 = "Kabupaten";
+                    $head2 = "Keterangan";
+                    $att1 = "Kabupaten";
+                    $att2 = "Keterangan";
+                    include 'input_3attribute.php';
                     break;
                 case 'provinsi':
-                    include 'input_tabel13.php';
+                    $tabel = "tb_provinsi";
+                    $page = "provinsi";
+                    $title = "Provinsi";
+                    $head1 = "Provinsi";
+                    $head2 = "Keterangan";
+                    $att1 = "Provinsi";
+                    $att2 = "Keterangan";
+                    include 'input_3attribute.php';
                     break;
                 case 'layanan':
-                    include 'input_tabel14.php';
+                    $tabel = "tb_layanan";
+                    $page = "layanan";
+                    $title = "Layanan";
+                    $head1 = "Layanan";
+                    $head2 = "Keterangan";
+                    $att1 = "Layanan";
+                    $att2 = "Keterangan";
+                    include 'input_3attribute.php';
                     break;
                 case 'transaksi_penjualan':
-                    include 'input_tabel15.php';
+                    $tabel = "tb_trx_01";
+                    $page = "transaksi_penjualan";
+                    $title = "Transaksi Produk";
+                    $head1 = "Nama Produk";
+                    $head2 = "Harga";
+                    $att1 = "nama_produk";
+                    $att2 = "Harga_satuan";
+                    $tampil = "tampil_trx";
+                    include 'input_trx.php';
                     break;
                 case 'transaksi_non_penjualan':
-                    include 'input_tabel16.php';
+                    $tabel = "tb_trx_02";
+                    $page = "transaksi_non_penjualan";
+                    $title = "Transaksi Non Penjualan";
+                    $head1 = "Nama Barang";
+                    $head2 = "Keterangan Barang";
+                    $att1 = "Nama_barang";
+                    $att2 = "Keterangan_barang";
+                    $tampil = "tampil_trx";
+                    include 'input_trx.php';
                     break;
                 case 'status_transaksi_01':
-                    include 'input_tabel17.php';
+                    $tabel = "tb_trx_status_01";
+                    $page = "status_transaksi_01";
+                    $title = "Status Transaksi 01";
+                    include 'input_status.php';
                     break;
                 case 'status_transaksi_02':
-                    include 'input_tabel18.php';
+                    $tabel = "tb_trx_status_02";
+                    $page = "status_transaksi_02";
+                    $title = "Status Transaksi 02";
+                    include 'input_status.php';
                     break;
                 case 'stock_produk':
-                    include 'input_tabel19.php';
+                    include 'input_stock.php';
                     break;
                 case 'harga_produk':
-                    include 'input_tabel20.php';
+                    include 'input_harga.php';
                     break;
                 case 'tampil_identitas_usaha':
                     $tabel = "tb_identitas_usaha";
                     $page = "tampil_identitas_usaha";
+                    $add = "identitas_usaha";
                     include 'tampil_identitas_usaha.php';
                     break;
                 case 'tampil_produk':
                     $tabel = "tb_produk";
                     $page = "tampil_produk";
+                    $add = "produk";
                     include 'tampil_produk.php';
                     break;
-                case 'tampil_trx_01':
+                case 'tampil_transaksi_penjualan':
                     $tabel = "tb_trx_01";
-                    $page = "tampil_trx_01";
-                    include 'tampil_trx_01.php';
+                    $page = "tampil_transaksi_penjualan";
+                    $title = "Transaksi Produk";
+                    $head1 = "Nama Barang";
+                    $head2 = "Keterangan Barang";
+                    $att1 = "Nama_barang";
+                    $att2 = "Keterangan_barang";
+                    $add = "transaksi_penjualan";
+                    include 'tampil_trx.php';
                     break;
-                case 'tampil_trx_02':
+                case 'tampil_transaksi_non_penjualan':
                     $tabel = "tb_trx_02";
-                    $page = "tampil_trx_02";
-                    include 'tampil_trx_02.php';
+                    $page = "tampil_transaksi_non_penjualan";
+                    $title = "Transaksi Non Penjualan";
+                    $head1 = "Nama Barang";
+                    $head2 = "Keterangan Barang";
+                    $att1 = "Nama_barang";
+                    $att2 = "Keterangan_barang";
+                    $add = "transaksi_non_penjualan";
+                    include 'tampil_trx.php';
                     break;
-                case 'tampil_status_01':
+                case 'tampil_status_transaksi_01':
                     $tabel = "tb_trx_status_01";
-                    $page = "tampil_status_01";
+                    $page = "tampil_status_transaksi_01";
                     $title = "Status Transaksi 01";
+                    $add = "status_transaksi_01";
                     include 'tampil_status.php';
                     break;
-                case 'tampil_status_02':
+                case 'tampil_status_transaksi_02':
                     $tabel = "tb_trx_status_02";
-                    $page = "tampil_status_02";
+                    $page = "tampil_status_transaksi_02";
                     $title = "Status Transaksi 02";
+                    $add = "status_transaksi_02";
                     include 'tampil_status.php';
                     break;
                 case 'tampil_stock_produk':
                     $tabel = "tb_trx_stock";
                     $page = "tampil_stock_produk";
+                    $add = "stock_produk";
                     include 'tampil_stock.php';
                     break;
                 case 'tampil_harga_produk':
                     $tabel = "tb_trx_harga_produk";
                     $page = "tampil_harga_produk";
+                    $add = "harga_produk";
                     include 'tampil_harga.php';
                     break;
                 case 'tampil_kategori_01':
@@ -241,6 +299,7 @@
                     $head2 = "Keterangan";
                     $att1 = "kategori_01";
                     $att2 = "Keterangan";
+                    $add = "kategori_01";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_kategori_02':
@@ -251,6 +310,7 @@
                     $head2 = "Keterangan";
                     $att1 = "kategori_02";
                     $att2 = "Keterangan";
+                    $add = "kategori_02";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_kategori_03':
@@ -261,6 +321,7 @@
                     $head2 = "Keterangan";
                     $att1 = "kategori_03";
                     $att2 = "Keterangan";
+                    $add = "kategori_03";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_kategori_04':
@@ -271,6 +332,7 @@
                     $head2 = "Keterangan";
                     $att1 = "kategori_04";
                     $att2 = "Keterangan";
+                    $add = "kategori_04";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_kategori_05':
@@ -281,6 +343,7 @@
                     $head2 = "Keterangan";
                     $att1 = "kategori_05";
                     $att2 = "Keterangan";
+                    $add = "kategori_05";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_kategori_06':
@@ -291,6 +354,7 @@
                     $head2 = "Keterangan";
                     $att1 = "kategori_06";
                     $att2 = "Keterangan";
+                    $add = "kategori_06";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_kategori_07':
@@ -301,6 +365,7 @@
                     $head2 = "Keterangan";
                     $att1 = "kategori_07";
                     $att2 = "Keterangan";
+                    $add = "kategori_07";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_kategori_usaha':
@@ -311,6 +376,7 @@
                     $head2 = "Deskripsi Toko";
                     $att1 = "kategori_toko";
                     $att2 = "deskripsi_toko";
+                    $add = "kategori_usaha";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_kecamatan':
@@ -321,6 +387,7 @@
                     $head2 = "Keterangan";
                     $att1 = "Kecamatan";
                     $att2 = "Keterangan";
+                    $add = "kecamatan";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_kabupaten':
@@ -331,6 +398,7 @@
                     $head2 = "Keterangan";
                     $att1 = "Kabupaten";
                     $att2 = "Keterangan";
+                    $add = "kabupaten";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_provinsi':
@@ -341,6 +409,7 @@
                     $head2 = "Keterangan";
                     $att1 = "Provinsi";
                     $att2 = "Keterangan";
+                    $add = "provinsi";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_layanan':
@@ -351,6 +420,7 @@
                     $head2 = "Keterangan";
                     $att1 = "Layanan";
                     $att2 = "Keterangan";
+                    $add = "layanan";
                     include('tampil_3attribute.php');
                     break;
                 case 'tampil_chart':

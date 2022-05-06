@@ -1,9 +1,16 @@
 <?php include_once("config.php"); ?>
 
+<?php
+clearstatcache()
+?>
+
 <div class="main-content">
     <section class="section">
         <div class="section-header">
             <h1>Lihat Data Stock Produk</h1>
+            <div class="section-header-button">
+                <a href="?page=stock_produk" class=" btn btn-primary">Tambah Data</a>
+            </div>
 
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Lihat Data</a></div>
@@ -83,13 +90,13 @@
                                             <th>Nama Produk</th>
                                             <th>Stock</th>
                                             <th>Terjual</th>
-                                            <th style="min-width: 135px; max-width: 135px">Action</th>
+                                            <th style="min-width: 135px; max-width: 135px">Aksi</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
                                 ';
                                 while ($data = mysqli_fetch_assoc($sql)) {
                                     echo '
-                                    <tbody>
                                         <tr>
                                             <td style="width: 85px" ;>
                                                 ' . $data['Id'] . '
@@ -99,11 +106,11 @@
                                             <td>' . $data['nama_produk'] . '</td>
                                             <td>' . $data['Stock'] . '</td>
                                             <td>' . $data['Terjual'] . '</td>
-                                            <td class="text-center" style="width:350px;"><a href="#" class="btn btn-warning">Edit</a> <a onclick="return confirm(\'Apakah anda yakin ingin menghapus data?\')" href="delete.php?Id=' . $data['Id'] . '&table=' . $tabel . '&page=' . $page . '" class="btn btn-danger">Hapus</a> </td>
+                                            <td class="text-center" style="width:350px;"><a href="?page=' . $add . '&Id=' . $data['Id'] . '" class="btn btn-warning">Edit</a> <a onclick="return confirm(\'Apakah anda yakin ingin menghapus data?\')" href="delete.php?Id=' . $data['Id'] . '&table=' . $tabel . '&page=' . $page . '" class="btn btn-danger">Hapus</a> </td>
                                         </tr>
-                                    </tbody>
-                                    ';
+                                        ';
                                 }
+                                echo '</tbody>';
                             } else {
                                 echo '
                                 <tbody>

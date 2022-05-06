@@ -1,10 +1,16 @@
 <?php include_once("config.php"); ?>
 
+<?php
+clearstatcache()
+?>
+
 <div class="main-content">
     <section class="section">
         <div class="section-header">
             <h1>Lihat Data Produk</h1>
-
+            <div class="section-header-button">
+                <a href="?page=produk" class=" btn btn-primary">Tambah Data</a>
+            </div>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Lihat Data</a></div>
                 <div class="breadcrumb-item">Produk</div>
@@ -88,13 +94,13 @@
                                             <th>Foto 4</th>
                                             <th>Video</th>
                                             <th>Video Youtube</th>
-                                            <th style="min-width: 135px; max-width: 135px">Action</th>
+                                            <th style="min-width: 135px; max-width: 135px">Aksi</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
                                 ';
                                 while ($data = mysqli_fetch_assoc($sql)) {
                                     echo '
-                                    <tbody>
                                         <tr>
                                             <td style="width: 85px" ;>
                                                 ' . $data['Id'] . '
@@ -110,11 +116,11 @@
                                             <td><a href="file/img/' . $data['Photo_4'] . '"><img src="file/img/' . $data['Photo_4'] . '" width="100px"></a></td>
                                             <td><a href="file/video/' . $data['Unggah_Video'] . '">' . $data['Unggah_Video'] . '</a></td>
                                             <td>' . $data['Video_Youtube'] . '</td>
-                                            <td class="text-center" style="width:350px;"><a href="#" class="btn btn-warning">Edit</a> <a onclick="return confirm(\'Apakah anda yakin ingin menghapus data?\')" href="delete.php?Id=' . $data['Id'] . '&table=' . $tabel . '&page=' . $page . '" class="btn btn-danger">Hapus</a> </td>
+                                            <td class="text-center" style="width:350px;"><a href="?page=' . $add . '&Id=' . $data['Id'] . '" class="btn btn-warning">Edit</a> <a onclick="return confirm(\'Apakah anda yakin ingin menghapus data?\')" href="delete.php?Id=' . $data['Id'] . '&table=' . $tabel . '&page=' . $page . '" class="btn btn-danger">Hapus</a> </td>
                                         </tr>
-                                    </tbody>
-                                    ';
+                                        ';
                                 }
+                                echo '</tbody>';
                             } else {
                                 echo '
                                 <tbody>
