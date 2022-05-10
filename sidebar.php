@@ -110,7 +110,6 @@
                     <li><a class="nav-link" href="index.php?page=tampil_status_transaksi_02">Status Transaksi 2</a></li>
                 </ul>
             </li>
-            <li><a class="nav-link" href="?page=tampil_chart"><i class="fas fa-chart-bar"></i> <span>Tampilkan Grafik</span></a></li>
         </ul>
     </aside>
 </div>

@@ -96,8 +96,8 @@ clearstatcache()
                                             <th>Jenis Biaya</th>
                                             <th>Klasifikasi Transaksi</th>
                                             <th>Status Transaksi</th>
-                                            <th>Nama Produk</th>
-                                            <th>Harga</th>
+                                            <th>' . $head1 . '</th>
+                                            <th>' . $head2 . '</th>
                                             <th>Bukti (Pdf)</th>
                                             <th>Bukti (Gambar)</th>
                                             <th>Catatan</th>
@@ -120,8 +120,8 @@ clearstatcache()
                                             <td>' . $data['kategori_03'] . '</td>
                                             <td>' . $data['kategori_04'] . '</td>
                                             <td>' . $data['kategori_05'] . '</td>
-                                            <td>' . $data['nama_produk'] . '</td>
-                                            <td>' . $data['Harga_satuan'] . '</td>
+                                            <td>' . $data[$att1] . '</td>
+                                            <td>' . $data[$att2] . '</td>
                                             <td><a href="file/pdf/' . $data['Unggah_bukti_pdf'] . '">' . $data['Unggah_bukti_pdf'] . '</a></td>
                                             <td><a href="file/img/' . $data['Unggah_bukti_gambar'] . '"><img src="file/img/' . $data['Unggah_bukti_gambar'] . '" width="100px"></a></td>
                                             <td>' . $data['Catatan'] . '</td>

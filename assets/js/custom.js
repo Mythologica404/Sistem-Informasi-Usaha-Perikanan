@@ -142,6 +142,50 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+  $("#table_trx2").DataTable({
+    dom: "Bfrtip",
+    buttons: [
+      {
+        extend: "pdf",
+        orientation: "landscape",
+        pageSize: "Legal",
+        title: document.getElementById("nama-table").innerHTML,
+        download: "open",
+        exportOptions: {
+          columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        },
+        className: "btn-primary",
+      },
+      {
+        extend: "csv",
+        exportOptions: {
+          columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        },
+        className: "btn-primary",
+      },
+      {
+        extend: "print",
+        title: document.getElementById("nama-table").innerHTML,
+        orientation: "landscape",
+        pageSize: "Legal",
+        exportOptions: {
+          columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        },
+        className: "btn-primary",
+      },
+      {
+        title: document.getElementById("nama-table").innerHTML,
+        extend: "copy",
+        exportOptions: {
+          columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        },
+        className: "btn-primary",
+      },
+    ],
+  });
+});
+
+$(document).ready(function () {
   $("#table-3attribute").DataTable({
     dom: "Bfrtip",
     buttons: [

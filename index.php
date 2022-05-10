@@ -198,8 +198,8 @@
                     $title = "Transaksi Produk";
                     $head1 = "Nama Produk";
                     $head2 = "Harga";
-                    $att1 = "nama_produk";
-                    $att2 = "Harga_satuan";
+                    $att1 = "Id_produk";
+                    $att2 = "Id_trx_harga_produk";
                     $tampil = "tampil_trx";
                     include 'input_trx.php';
                     break;
@@ -248,10 +248,10 @@
                     $tabel = "tb_trx_01";
                     $page = "tampil_transaksi_penjualan";
                     $title = "Transaksi Produk";
-                    $head1 = "Nama Barang";
-                    $head2 = "Keterangan Barang";
-                    $att1 = "Nama_barang";
-                    $att2 = "Keterangan_barang";
+                    $head1 = "Nama Produk";
+                    $head2 = "Harga";
+                    $att1 = "nama_produk";
+                    $att2 = "Harga_satuan";
                     $add = "transaksi_penjualan";
                     include 'tampil_trx.php';
                     break;
@@ -423,9 +423,6 @@
                     $att2 = "Keterangan";
                     $add = "layanan";
                     include('tampil_3attribute.php');
-                    break;
-                case 'tampil_chart':
-                    include('tampil_chart.php');
                     break;
                 default:
                     include 'home.php';

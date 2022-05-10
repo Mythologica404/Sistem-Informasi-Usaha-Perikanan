@@ -268,7 +268,7 @@
                         <label>Kategori</label>
                         <select class="form-control" name="kategori" required>
                             <?php
-                            $sql = mysqli_query($con, "SELECT * FROM tb_kategori_06 ORDER BY Id ASC") or die(mysqli_error($con));
+                            $sql = mysqli_query($con, "SELECT * FROM tb_kategori_usaha ORDER BY Id ASC") or die(mysqli_error($con));
 
                             if (mysqli_num_rows($sql) > 0) {
                                 while ($data = mysqli_fetch_assoc($sql)) {
@@ -276,7 +276,7 @@
                                     if ($edit8 == $data['Id']) {
                                         echo 'selected';
                                     }
-                                    echo '>' . $data['kategori_06'] . '</option>';
+                                    echo '>' . $data['kategori_toko'] . '</option>';
                                 }
                             }
                             ?>

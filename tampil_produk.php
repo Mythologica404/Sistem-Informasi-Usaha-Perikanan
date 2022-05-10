@@ -74,7 +74,7 @@ clearstatcache()
                     <div class="table-responsive">
                         <table class="table table-striped" id="table-produk">
                             <?php
-                            $sql = mysqli_query($con, "SELECT tb_produk.Id, tb_produk.nama_produk, tb_kategori_06.kategori_06, tb_identitas_usaha.nama_usaha, tb_produk.Deskripsi_produk, tb_kategori_07.kategori_07, tb_produk.Photo_1, tb_produk.Photo_2, tb_produk.Photo_3, tb_produk.Photo_4, tb_produk.Unggah_Video, tb_produk.Video_Youtube FROM tb_produk JOIN tb_kategori_06 ON tb_kategori_06.Id = tb_produk.Id_kategori_produk JOIN tb_identitas_usaha ON tb_identitas_usaha.Id = tb_produk.Id_identitas_usaha JOIN tb_kategori_07 ON tb_kategori_07.Id = tb_produk.Id_kategori_07;") or die(mysqli_error($con));
+                            $sql = mysqli_query($con, "SELECT tb_produk.Id, tb_produk.nama_produk, tb_kategori_usaha.kategori_toko, tb_identitas_usaha.nama_usaha, tb_produk.Deskripsi_produk, tb_kategori_07.kategori_07, tb_produk.Photo_1, tb_produk.Photo_2, tb_produk.Photo_3, tb_produk.Photo_4, tb_produk.Unggah_Video, tb_produk.Video_Youtube FROM tb_produk JOIN tb_kategori_usaha ON tb_kategori_usaha.Id = tb_produk.Id_kategori_produk JOIN tb_identitas_usaha ON tb_identitas_usaha.Id = tb_produk.Id_identitas_usaha JOIN tb_kategori_07 ON tb_kategori_07.Id = tb_produk.Id_kategori_07;") or die(mysqli_error($con));
 
                             if (mysqli_num_rows($sql) > 0) {
                                 echo '
@@ -106,10 +106,10 @@ clearstatcache()
                                                 ' . $data['Id'] . '
                                             </td>
                                             <td>' . $data['nama_produk'] . '</td>
-                                            <td>' . $data['kategori_06'] . '</td>
+                                            <td>' . $data['kategori_toko'] . '</td>
                                             <td>' . $data['nama_usaha'] . '</td>
                                             <td>' . $data['Deskripsi_produk'] . '</td>
-                                            <td>' . $data['kategori_07'] . '</td>
+                                            <td>' . $data['kategori_toko'] . '</td>
                                             <td><a href="file/img/' . $data['Photo_1'] . '"><img src="file/img/' . $data['Photo_1'] . '" width="100px"></a></td>
                                             <td><a href="file/img/' . $data['Photo_2'] . '"><img src="file/img/' . $data['Photo_2'] . '" width="100px"></a></td>
                                             <td><a href="file/img/' . $data['Photo_3'] . '"><img src="file/img/' . $data['Photo_3'] . '" width="100px"></a></td>

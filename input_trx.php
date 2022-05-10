@@ -187,10 +187,14 @@
                     ?>
 
                     <?php
-                    if (isset($_GET['Id'])) {
+                    if (isset($_GET['Id']) && $page == 'transaksi_penjualan') {
                         echo '<form action="index.php?page=transaksi_penjualan&Id=' . $_GET['Id'] . '" method="post" enctype="multipart/form-data">';
-                    } else {
+                    } else if (!isset($_GET['Id']) && $page == 'transaksi_penjualan') {
                         echo '<form action="index.php?page=transaksi_penjualan" method="post" enctype="multipart/form-data">';
+                    } else if (isset($_GET['Id']) && $page == 'transaksi_non_penjualan') {
+                        echo '<form action="index.php?page=transaksi_non_penjualan&Id=' . $_GET['Id'] . '" method="post" enctype="multipart/form-data">';
+                    } else if (!isset($_GET['Id']) && $page == 'transaksi_non_penjualan') {
+                        echo '<form action="index.php?page=transaksi_non_penjualan" method="post" enctype="multipart/form-data">';
                     }
                     ?>
                     <div class="form-group">
@@ -323,7 +327,7 @@
                                 if ($edit9 == $data['Id']) {
                                     echo 'selected';
                                 }
-                                echo '>' . $data[$att1] . '</option>';
+                                echo '>' . $data['nama_produk'] . '</option>';
                             }
                         }
                         echo '
@@ -340,7 +344,7 @@
                                 if ($edit10 == $data['Id']) {
                                     echo 'selected';
                                 }
-                                echo '>' . $data[$att2] . '</option>';
+                                echo '>' . $data['Harga_satuan'] . '</option>';
                             }
                         }
                         echo '
