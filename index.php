@@ -424,6 +424,12 @@
                     $add = "layanan";
                     include('tampil_3attribute.php');
                     break;
+                case 'tampil_chart':
+                    include('tampil_chart.php');
+                    break;
+                case 'tampil_table':
+                    include('tampil_table.php');
+                    break;
                 default:
                     include 'home.php';
             }

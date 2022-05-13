@@ -110,6 +110,13 @@
                     <li><a class="nav-link" href="index.php?page=tampil_status_transaksi_02">Status Transaksi 2</a></li>
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-chart-bar"></i> <span>Output</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="index.php?page=tampil_chart">Output Grafis</a></li>
+                    <li><a class="nav-link" href="index.php?page=tampil_table">Output Tabel</a></li>
+                </ul>
+            </li>
         </ul>
     </aside>
 </div>
